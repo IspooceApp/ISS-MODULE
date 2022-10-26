@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors")
 
 const app = express();
 const PORT = process.env.PORT || 8000
@@ -583,6 +584,8 @@ const modules = {
     }
 
 }
+
+app.use(cors())
 
 app.get('/:moduleID', (req, res) => {
     const moduleID = req.params.moduleID;
